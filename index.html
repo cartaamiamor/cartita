@@ -1,0 +1,2729 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1d1733" />
+  <meta name="description" content="Un pequeño rincón para celebrar nuestro primer mes, Sofía." />
+  <title>Sofía · Nuestro primer mes ✨</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --sky-top: #020711;
+      --sky-mid: #07152d;
+      --horizon: #10284a;
+      --moon: #fff8d9;
+      --moon-glow: rgba(255, 246, 201, .35);
+      --water-deep: #03101e;
+      --water-mid: #082640;
+      --water-light: #164969;
+      --sand-dark: #17151c;
+      --sand-mid: #30283a;
+      --foam: rgba(223, 241, 255, .75);
+
+      --night: #171329;
+      --night-soft: #231a3c;
+      --ink: #2f2540;
+      --cream: #fffaf5;
+      --paper: rgba(255, 250, 245, 0.88);
+      --rose: #ef9bb4;
+      --rose-deep: #ce6c8c;
+      --lavender: #b9a8ec;
+      --lilac: #e6dcff;
+      --gold: #f4d48f;
+      --sage: #a7c8ae;
+      --white: #ffffff;
+      --shadow: 0 22px 70px rgba(36, 22, 55, 0.16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1120px;
+      --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --spring-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 6%, rgba(239, 155, 180, .22), transparent 26rem),
+        radial-gradient(circle at 88% 16%, rgba(185, 168, 236, .25), transparent 24rem),
+        linear-gradient(180deg, #fcf6ff 0%, #fffaf5 42%, #f7efff 100%);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .stars,
+    .stars::before,
+    .stars::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 10% 15%, rgba(255, 255, 255, .9) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 28% 68%, rgba(255, 255, 255, .7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 46% 23%, rgba(255, 255, 255, .8) 0 1.2px, transparent 1.7px),
+        radial-gradient(circle at 63% 77%, rgba(255, 255, 255, .7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 82% 28%, rgba(255, 255, 255, .8) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 92% 73%, rgba(255, 255, 255, .7) 0 1.2px, transparent 1.7px);
+      background-size: 260px 230px;
+      opacity: .8;
+    }
+
+    .stars::before {
+      transform: translateX(110px) scale(.8);
+      opacity: .55;
+    }
+
+    .stars::after {
+      transform: translateY(75px) scale(1.2);
+      opacity: .35;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: .8;
+      }
+
+      50% {
+        opacity: .3;
+      }
+    }
+
+    .stars {
+      animation: twinkle 5s ease-in-out infinite;
+    }
+
+    .stars::before {
+      animation: twinkle 6.4s ease-in-out infinite;
+      animation-delay: .8s;
+    }
+
+    .stars::after {
+      animation: twinkle 4.3s ease-in-out infinite;
+      animation-delay: 1.6s;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(239, 155, 180, .16), transparent 18rem),
+        linear-gradient(145deg, #171329 4%, #261b43 58%, #433160 100%);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -15% -24% -15%;
+      height: 48%;
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .08));
+      transform: rotate(-2deg);
+      z-index: -1;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items: center;
+      padding: 96px 0 72px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #f7dceb;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: .7;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      margin: 0;
+      letter-spacing: -.025em;
+    }
+
+    h1 {
+      font-size: clamp(3.6rem, 8vw, 7.6rem);
+      line-height: .91;
+      max-width: 850px;
+    }
+
+    .hero .accent {
+      color: #f7c7d6;
+      font-style: italic;
+    }
+
+    .hero-copy p {
+      max-width: 620px;
+      font-size: clamp(1.02rem, 1.7vw, 1.25rem);
+      line-height: 1.75;
+      color: rgba(255, 255, 255, .79);
+      margin: 26px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 700;
+      transition: transform 150ms var(--spring-smooth), box-shadow 150ms ease, background 150ms ease, opacity 150ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      transition-duration: 0ms;
+    }
+
+    .button:active {
+      transform: scale(0.97);
+      transition-duration: 0ms;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #f6c2d2, #f4d48f);
+      color: #372743;
+      box-shadow: 0 14px 34px rgba(239, 155, 180, .22);
+      transition: transform 150ms var(--spring-smooth), box-shadow 200ms ease;
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      box-shadow: 0 16px 40px rgba(244, 212, 143, .4);
+    }
+
+    .button-ghost {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, .24);
+      background: rgba(255, 255, 255, .07);
+      backdrop-filter: blur(10px);
+    }
+
+    .scene {
+      border-radius: var(--radius-xl);
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at 76% 24%, rgba(70, 105, 160, .18), transparent 25%),
+        linear-gradient(to bottom,
+          var(--sky-top) 0%,
+          var(--sky-mid) 37%,
+          var(--horizon) 55%,
+          #0b1e31 56%,
+          #06111d 100%);
+    }
+
+    /* ---------- STARS ---------- */
+    .stars,
+    .stars::before,
+    .stars::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    .stars {
+      z-index: 1;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, .95) 0 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(190, 215, 255, .8) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255, 246, 210, .85) 0 .8px, transparent 1.3px);
+      background-size: 117px 117px, 151px 151px, 83px 83px;
+      background-position: 10px 15px, 43px 19px, 5px 58px;
+      opacity: .55;
+      animation: starDrift 80s linear infinite;
+    }
+
+    .stars::before {
+      background-image:
+        radial-gradient(circle, #fff 0 1.2px, transparent 1.8px),
+        radial-gradient(circle, rgba(210, 225, 255, .9) 0 .9px, transparent 1.5px);
+      background-size: 211px 211px, 177px 177px;
+      background-position: 90px 30px, 35px 90px;
+      opacity: .38;
+      animation: twinkle 5s ease-in-out infinite alternate;
+    }
+
+    .stars::after {
+      background:
+        radial-gradient(circle at 12% 17%, rgba(255, 255, 255, .9) 0 1px, transparent 2px),
+        radial-gradient(circle at 31% 11%, rgba(255, 255, 255, .75) 0 1px, transparent 2px),
+        radial-gradient(circle at 47% 23%, rgba(255, 255, 255, .85) 0 1px, transparent 2px),
+        radial-gradient(circle at 62% 9%, rgba(255, 255, 255, .65) 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 15%, rgba(255, 255, 255, .9) 0 1px, transparent 2px);
+      filter: drop-shadow(0 0 4px white);
+      opacity: .8;
+    }
+
+    @keyframes starDrift {
+      to {
+        transform: translate3d(-45px, 18px, 0);
+      }
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: .18;
+        filter: brightness(.8);
+      }
+
+      100% {
+        opacity: .65;
+        filter: brightness(1.35);
+      }
+    }
+
+    /* ---------- SHOOTING STARS ---------- */
+    .shooting-star {
+      position: absolute;
+      z-index: 3;
+      top: 16%;
+      left: -15%;
+      width: 150px;
+      height: 1px;
+      opacity: 0;
+      transform: rotate(-16deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), #fff);
+      filter: drop-shadow(0 0 4px #dfefff);
+      animation: shoot 10s linear infinite;
+    }
+
+    .shooting-star:nth-of-type(2) {
+      top: 26%;
+      animation-delay: 6.2s;
+      animation-duration: 13s;
+      transform: rotate(-12deg) scale(.7);
+    }
+
+    @keyframes shoot {
+
+      0%,
+      72% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) rotate(-16deg);
+      }
+
+      74% {
+        opacity: 1;
+      }
+
+      82% {
+        opacity: .9;
+      }
+
+      88%,
+      100% {
+        opacity: 0;
+        transform: translate3d(125vw, 24vh, 0) rotate(-16deg);
+      }
+    }
+
+    /* ---------- MOON ---------- */
+    .moon-wrap {
+      position: absolute;
+      z-index: 4;
+      top: 10vh;
+      right: 15vw;
+      width: min(15vw, 180px);
+      aspect-ratio: 1;
+    }
+
+    .moon-glow {
+      position: absolute;
+      inset: -65%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(255, 252, 225, .38) 0%,
+          rgba(208, 227, 255, .15) 28%,
+          rgba(101, 147, 214, .08) 46%,
+          transparent 70%);
+      filter: blur(8px);
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    .moon {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 35% 33%, rgba(185, 179, 157, .2) 0 5%, transparent 6%),
+        radial-gradient(circle at 64% 62%, rgba(175, 169, 151, .18) 0 7%, transparent 8%),
+        radial-gradient(circle at 68% 28%, rgba(180, 176, 160, .17) 0 3%, transparent 4%),
+        radial-gradient(circle at 42% 72%, rgba(165, 161, 148, .15) 0 4%, transparent 5%),
+        radial-gradient(circle at 51% 50%, #fffdf0 0%, #fff9d5 64%, #f5e9b7 100%);
+      box-shadow:
+        0 0 18px rgba(255, 247, 211, .95),
+        0 0 50px rgba(213, 230, 255, .42),
+        0 0 100px rgba(135, 179, 238, .15);
+    }
+
+    @keyframes breathe {
+      50% {
+        transform: scale(1.07);
+        opacity: .8;
+      }
+    }
+
+    /* ---------- CLOUDS ---------- */
+    .cloud {
+      position: absolute;
+      z-index: 2;
+      height: 28px;
+      width: 210px;
+      border-radius: 50%;
+      background: rgba(125, 156, 193, .07);
+      filter: blur(10px);
+      animation: cloudMove 42s linear infinite;
+    }
+
+    .cloud.c1 {
+      top: 19%;
+      left: -28%;
+      width: 280px;
+    }
+
+    .cloud.c2 {
+      top: 31%;
+      left: -20%;
+      width: 210px;
+      animation-delay: -17s;
+      opacity: .55;
+    }
+
+    .cloud.c3 {
+      top: 39%;
+      left: -38%;
+      width: 350px;
+      animation-delay: -29s;
+      opacity: .35;
+    }
+
+    @keyframes cloudMove {
+      to {
+        transform: translateX(145vw);
+      }
+    }
+
+    /* ---------- HORIZON ---------- */
+    .horizon-haze {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      top: 52%;
+      height: 8%;
+      background: linear-gradient(to bottom, transparent, rgba(86, 130, 175, .08), transparent);
+      filter: blur(6px);
+    }
+
+    .island {
+      position: absolute;
+      z-index: 5;
+      left: 4%;
+      top: 51.5%;
+      width: 27%;
+      height: 5%;
+      opacity: .92;
+      background: #03090f;
+      clip-path: polygon(0 100%, 0 78%, 12% 72%, 23% 55%, 31% 58%, 43% 27%, 52% 42%,
+          61% 21%, 70% 54%, 82% 61%, 89% 72%, 100% 80%, 100% 100%);
+    }
+
+    /* ---------- SEA ---------- */
+    .sea {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      top: 55%;
+      bottom: 17%;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom,
+          #0b2942 0%,
+          #082137 20%,
+          #061928 45%,
+          #061522 70%,
+          #07131d 100%);
+    }
+
+    .sea::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .45;
+      background:
+        repeating-linear-gradient(177deg,
+          transparent 0 9px,
+          rgba(123, 187, 228, .08) 10px 11px,
+          transparent 12px 18px);
+      animation: waterTexture 8s linear infinite;
+    }
+
+    @keyframes waterTexture {
+      50% {
+        transform: translateY(7px) scaleX(1.03);
+      }
+    }
+
+    .moon-reflection {
+      position: absolute;
+      z-index: 3;
+      top: -4%;
+      bottom: -12%;
+      right: 8%;
+      width: 30%;
+      transform: perspective(180px) rotateX(52deg);
+      transform-origin: top center;
+      opacity: .72;
+      filter: blur(.25px);
+      background:
+        repeating-linear-gradient(to bottom,
+          rgba(255, 245, 190, .7) 0 2px,
+          transparent 3px 7px,
+          rgba(214, 232, 245, .25) 8px 9px,
+          transparent 10px 16px);
+      clip-path: polygon(45% 0, 55% 0, 72% 100%, 19% 100%);
+      animation: reflection 4.8s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes reflection {
+
+      0%,
+      100% {
+        opacity: .50;
+        transform: perspective(180px) rotateX(52deg) translateX(-4px);
+      }
+
+      50% {
+        opacity: .80;
+        transform: perspective(180px) rotateX(52deg) translateX(5px);
+      }
+    }
+
+    .wave-line {
+      position: absolute;
+      left: -15%;
+      width: 130%;
+      height: 18px;
+      border-radius: 50%;
+      border-top: 1px solid rgba(176, 220, 245, .22);
+      filter: blur(.2px);
+      animation: waveSlide 6s ease-in-out infinite alternate;
+    }
+
+    .wave-line.w1 {
+      top: 18%;
+      animation-delay: -1s;
+    }
+
+    .wave-line.w2 {
+      top: 37%;
+      animation-delay: -3.5s;
+      opacity: .65;
+    }
+
+    .wave-line.w3 {
+      top: 59%;
+      animation-delay: -2.1s;
+      opacity: .5;
+    }
+
+    .wave-line.w4 {
+      top: 78%;
+      animation-delay: -5s;
+      opacity: .42;
+    }
+
+    @keyframes waveSlide {
+      from {
+        transform: translateX(-2%) scaleX(.98);
+      }
+
+      to {
+        transform: translateX(3%) scaleX(1.03);
+      }
+    }
+
+    /* ---------- SHORE WAVES ---------- */
+    .shore-wave {
+      position: absolute;
+      z-index: 8;
+      left: -10%;
+      width: 120%;
+      height: 10%;
+      border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+      transform-origin: center bottom;
+    }
+
+    .shore-wave.back {
+      bottom: 13.5%;
+      height: 10%;
+      background:
+        linear-gradient(to bottom,
+          rgba(111, 173, 211, .12),
+          rgba(223, 240, 250, .28) 20%,
+          rgba(205, 229, 243, .11) 37%,
+          transparent 65%);
+      filter: blur(1.2px);
+      animation: shoreBack 6.8s ease-in-out infinite;
+    }
+
+    .shore-wave.front {
+      bottom: 10.5%;
+      height: 8%;
+      background:
+        linear-gradient(to bottom,
+          rgba(231, 245, 253, .72),
+          rgba(185, 218, 235, .2) 27%,
+          transparent 67%);
+      filter: blur(.4px);
+      animation: shoreFront 5.5s ease-in-out infinite;
+    }
+
+    @keyframes shoreBack {
+
+      0%,
+      100% {
+        transform: translateY(18px) scaleX(1.02);
+      }
+
+      50% {
+        transform: translateY(-7px) scaleX(.98);
+      }
+    }
+
+    @keyframes shoreFront {
+
+      0%,
+      100% {
+        transform: translateY(24px) scaleX(.96);
+      }
+
+      50% {
+        transform: translateY(-10px) scaleX(1.03);
+      }
+    }
+
+    /* ---------- BEACH ---------- */
+    .beach {
+      position: absolute;
+      z-index: 6;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 24%;
+      background:
+        radial-gradient(ellipse at 25% 18%, rgba(123, 103, 114, .11), transparent 23%),
+        radial-gradient(ellipse at 68% 34%, rgba(122, 109, 122, .08), transparent 19%),
+        linear-gradient(to bottom, #24212c 0%, #1a1821 36%, #12121a 100%);
+      clip-path: polygon(0 30%, 14% 25%, 30% 32%, 48% 21%, 63% 27%, 81% 18%, 100% 22%, 100% 100%, 0 100%);
+    }
+
+    .wet-sand {
+      position: absolute;
+      z-index: 7;
+      left: 0;
+      right: 0;
+      bottom: 12%;
+      height: 8%;
+      opacity: .45;
+      background:
+        linear-gradient(to bottom,
+          rgba(56, 74, 88, .48),
+          rgba(49, 45, 56, .25) 35%,
+          transparent);
+      clip-path: polygon(0 15%, 15% 6%, 28% 18%, 46% 5%, 65% 15%, 83% 2%, 100% 9%, 100% 100%, 0 100%);
+    }
+
+    /* ---------- FOREGROUND ROCKS ---------- */
+    .rock {
+      position: absolute;
+      z-index: 10;
+      bottom: 7%;
+      background: linear-gradient(135deg, #0a0b10, #15121a 45%, #07080c);
+      box-shadow: 0 -2px 10px rgba(93, 120, 139, .05);
+    }
+
+    .rock.r1 {
+      left: 8%;
+      width: 7vw;
+      min-width: 55px;
+      height: 5.2vw;
+      min-height: 38px;
+      border-radius: 65% 48% 38% 52%;
+      transform: rotate(-5deg);
+    }
+
+    .rock.r2 {
+      left: 14%;
+      bottom: 5%;
+      width: 4.8vw;
+      min-width: 38px;
+      height: 3.5vw;
+      min-height: 27px;
+      border-radius: 55% 70% 45% 50%;
+      transform: rotate(8deg);
+    }
+
+    /* ---------- SPARKLES ---------- */
+    .sparkle {
+      position: absolute;
+      z-index: 12;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #fff6d5;
+      box-shadow: 0 0 7px rgba(255, 246, 213, .95);
+      animation: floatSparkle 4s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    .sparkle.s1 {
+      left: 71%;
+      bottom: 31%;
+      animation-delay: .2s;
+    }
+
+    .sparkle.s2 {
+      left: 78%;
+      bottom: 27%;
+      animation-delay: 1.8s;
+    }
+
+    .sparkle.s3 {
+      left: 64%;
+      bottom: 34%;
+      animation-delay: 3s;
+    }
+
+    .sparkle.s4 {
+      left: 83%;
+      bottom: 32%;
+      animation-delay: 2.3s;
+    }
+
+    .sparkle.s5 {
+      left: 58%;
+      bottom: 28%;
+      animation-delay: .9s;
+    }
+
+    @keyframes floatSparkle {
+      0% {
+        opacity: 0;
+        transform: translateY(8px) scale(.5);
+      }
+
+      35% {
+        opacity: .85;
+      }
+
+      60% {
+        opacity: .45;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-25px) scale(1.25);
+      }
+    }
+
+    /* ---------- VIGNETTE ---------- */
+    .vignette {
+      position: absolute;
+      z-index: 20;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at center,
+          transparent 38%,
+          rgba(0, 0, 0, .12) 68%,
+          rgba(0, 0, 0, .42) 100%);
+    }
+
+    /* ---------- OPTIONAL ROMANTIC CAPTION ---------- */
+    .caption {
+      position: absolute;
+      z-index: 18;
+      left: 50%;
+      bottom: 5.5%;
+      transform: translateX(-50%);
+      width: min(88%, 760px);
+      text-align: center;
+      color: rgba(255, 249, 232, .86);
+      letter-spacing: .09em;
+      font-size: clamp(.82rem, 1.5vw, 1.08rem);
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .9);
+      opacity: .82;
+      user-select: none;
+    }
+
+    @media (max-width:700px) {
+      .moon-wrap {
+        top: 12vh;
+        right: 11vw;
+        width: 23vw;
+      }
+
+      .island {
+        width: 36%;
+      }
+
+      .sea {
+        top: 55%;
+        bottom: 18%;
+      }
+
+      .beach {
+        height: 27%;
+      }
+
+      .caption {
+        bottom: 4.2%;
+        font-size: .78rem;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+
+    .section {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+      padding: 104px 0;
+    }
+
+    .section-kicker {
+      color: var(--rose-deep);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.03;
+      max-width: 850px;
+    }
+
+    .section-intro {
+      max-width: 690px;
+      color: #6c6077;
+      line-height: 1.85;
+      font-size: 1.06rem;
+      letter-spacing: 0.01em;
+      margin: 22px 0 0;
+    }
+
+    .countdown-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 44px;
+      align-items: center;
+      border-radius: var(--radius-xl);
+      padding: clamp(28px, 5vw, 58px);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(185, 168, 236, .2), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, .92), rgba(255, 247, 251, .88));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(206, 108, 140, .13);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .time-box {
+      text-align: center;
+      padding: 22px 8px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #241a3c, #3b2a54);
+      color: white;
+      box-shadow: 0 14px 30px rgba(36, 26, 60, .18);
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-family: "Playfair Display", serif;
+      line-height: 1;
+    }
+
+    .time-box span {
+      display: block;
+      margin-top: 8px;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .date-card {
+      margin-top: 18px;
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: #7a6072;
+      font-weight: 700;
+    }
+
+    .portrait-note {
+      position: relative;
+      min-height: 440px;
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(28, 20, 45, .06) 15%, rgba(28, 20, 45, .82) 100%),
+        radial-gradient(circle at 35% 25%, #e4c6ef 0, #bbacd4 33%, #6f5b8a 100%);
+    }
+
+    .portrait-note::before {
+      content: "Añade aquí una foto bonita de Sofía o de ustedes";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
+      color: rgba(255, 255, 255, .72);
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .portrait-note.has-photo::before {
+      display: none;
+    }
+
+    .portrait-note img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .portrait-note::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 24%, rgba(23, 19, 41, .82));
+      z-index: 1;
+    }
+
+    .portrait-note-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .portrait-note h3 {
+      font-size: 2.5rem;
+    }
+
+    .portrait-note p {
+      color: rgba(255, 255, 255, .8);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: .84fr 1.16fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .sticky-heading {
+      position: sticky;
+      top: 32px;
+    }
+
+    .reasons {
+      display: grid;
+      gap: 14px;
+    }
+
+    .reason {
+      position: relative;
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid rgba(70, 48, 92, .08);
+      border-radius: 22px;
+      padding: 24px 24px 24px 78px;
+      box-shadow: 0 10px 30px rgba(48, 32, 71, .05);
+      transition: transform 150ms var(--spring-smooth), box-shadow 150ms ease;
+    }
+
+    .reason:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(48, 32, 71, .09);
+      transition-duration: 0ms;
+    }
+
+    .reason:active {
+      transform: scale(0.98);
+      transition-duration: 0ms;
+    }
+
+    .reason .icon {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #fce8ef, #eee8ff);
+      font-size: 1.1rem;
+    }
+
+    .reason h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0;
+      margin-bottom: 6px;
+    }
+
+    .reason p {
+      margin: 0;
+      color: #71667b;
+      line-height: 1.65;
+    }
+
+    .memory-band {
+      width: 100%;
+      padding: 100px 0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(239, 155, 180, .16), transparent 24rem),
+        linear-gradient(145deg, #1b162f, #33254a 70%, #483559);
+      color: white;
+      overflow: hidden;
+    }
+
+    .memory-inner {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .memory-band .section-kicker {
+      color: #f5c7d5;
+    }
+
+    .memory-band .section-intro {
+      color: rgba(255, 255, 255, .68);
+    }
+
+    .gallery-title {
+      font-size: 1.6rem;
+      margin: 64px 0 24px;
+      color: #f5c7d5;
+      font-family: "Playfair Display", serif;
+      letter-spacing: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .gallery-item {
+        transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+        transition-duration: 0ms;
+      }
+
+      .gallery-item img {
+        transition: transform 250ms ease-out;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.02);
+        transition-duration: 0ms;
+      }
+    }
+
+    .gallery-item:active {
+      transform: scale(0.98);
+      transition-duration: 0ms;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Animación de entrada de fotografías */
+    .photo-motion {
+      opacity: 0;
+    }
+
+    .photo-motion.is-visible {
+      opacity: 1;
+      animation: photoEnter 400ms var(--spring-smooth);
+    }
+
+    @keyframes photoEnter {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 12px, 0) scale(0.99);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .photo-motion {
+        opacity: 1;
+      }
+
+      .photo-motion.is-visible {
+        animation: none;
+      }
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: 85%;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgba(35, 26, 60, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.82rem;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: 500;
+      pointer-events: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-label small {
+      display: block;
+      font-size: 0.75em;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .letter {
+      position: relative;
+      max-width: 860px;
+      margin: 42px auto 0;
+      padding: clamp(30px, 6vw, 68px);
+      border-radius: 12px 38px 12px 38px;
+      background:
+        linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, .78)),
+        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(111, 95, 128, .08) 30px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(95, 72, 110, .08);
+    }
+
+    .letter::before {
+      content: "❀";
+      position: absolute;
+      top: -24px;
+      right: 32px;
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f4d3df;
+      color: #a64e70;
+      font-size: 1.8rem;
+      box-shadow: 0 12px 24px rgba(206, 108, 140, .18);
+    }
+
+    .letter p {
+      margin: 0 0 20px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+      line-height: 1.95;
+      letter-spacing: 0.015em;
+      color: #4d3e58;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-weight: 800;
+      color: var(--rose-deep);
+    }
+
+    .envelope {
+      max-width: 420px;
+      margin: 0 auto 2px;
+      perspective: 1400px;
+      overflow: hidden;
+      transition: max-height .6s ease, opacity .5s ease, margin .6s ease;
+      max-height: 420px;
+    }
+
+    .envelope-collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      pointer-events: none;
+    }
+
+    .envelope-body {
+      position: relative;
+      text-align: center;
+      padding: 46px 28px 30px;
+      border-radius: 12px 38px 12px 38px;
+      background: linear-gradient(160deg, #fff7fb, #f3edff);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(206, 108, 140, .15);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 54%;
+      background: linear-gradient(155deg, #f6dbe6, #e7defc);
+      clip-path: polygon(0 0, 100% 0, 50% 96%);
+      transform-origin: top center;
+      transition: transform .9s cubic-bezier(.5, 0, .2, 1);
+      backface-visibility: hidden;
+    }
+
+    .envelope.envelope-open .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    .envelope-seal {
+      position: relative;
+      z-index: 2;
+      width: 58px;
+      height: 58px;
+      margin: 8px auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f4d3df;
+      color: #a64e70;
+      font-size: 1.5rem;
+      box-shadow: 0 10px 20px rgba(206, 108, 140, .22);
+      transition: transform .5s ease, opacity .5s ease;
+    }
+
+    .envelope.envelope-open .envelope-seal {
+      transform: scale(.4);
+      opacity: 0;
+    }
+
+    .envelope-label {
+      position: relative;
+      z-index: 2;
+      margin: 0 0 18px;
+      color: #6c6077;
+      font-weight: 700;
+    }
+
+    .envelope-body .button {
+      position: relative;
+      z-index: 2;
+    }
+
+    .envelope-open .envelope-body .button {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .surprise {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .surprise-panel {
+      max-width: 760px;
+      margin: 24px auto 0;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .5s ease;
+    }
+
+    .surprise-panel.open {
+      grid-template-rows: 1fr;
+    }
+
+    .surprise-panel>div {
+      overflow: hidden;
+    }
+
+    .surprise-card {
+      margin-top: 2px;
+      border-radius: 28px;
+      padding: clamp(26px, 5vw, 48px);
+      background: linear-gradient(145deg, #fff0f6, #f2edff);
+      border: 1px solid rgba(206, 108, 140, .14);
+      box-shadow: var(--shadow);
+    }
+
+    .surprise-card .big {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      margin: 0 0 10px;
+    }
+
+    .surprise-card p {
+      color: #6b5f74;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    footer {
+      padding: 44px 18px 60px;
+      text-align: center;
+      color: #81758a;
+      font-size: .9rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal.visible .reason {
+      animation: fadeInUp 500ms var(--spring-smooth) backwards;
+    }
+
+    .reveal.visible .reason:nth-child(1) {
+      animation-delay: 50ms;
+    }
+
+    .reveal.visible .reason:nth-child(2) {
+      animation-delay: 110ms;
+    }
+
+    .reveal.visible .reason:nth-child(3) {
+      animation-delay: 170ms;
+    }
+
+    .reveal.visible .reason:nth-child(4) {
+      animation-delay: 230ms;
+    }
+
+    .reveal.visible .reason:nth-child(n+5) {
+      animation-delay: 290ms;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 400ms var(--spring-smooth), transform 400ms var(--spring-smooth);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .petal {
+      position: fixed;
+      top: -30px;
+      width: 12px;
+      height: 17px;
+      border-radius: 90% 10% 80% 20%;
+      background: rgba(239, 155, 180, .58);
+      pointer-events: none;
+      z-index: 999;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translate3d(var(--drift), 110vh, 0) rotate(540deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 850px) {
+
+      .hero-inner,
+      .countdown-wrap,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        gap: 12px;
+        padding-top: 80px;
+      }
+
+      .moon-scene {
+        min-height: 390px;
+      }
+
+      .moon {
+        width: min(66vw, 290px);
+      }
+
+      .orbit-card {
+        font-size: .78rem;
+      }
+
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-card {
+        min-height: 270px;
+      }
+
+      .sticky-heading {
+        position: static;
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 18vw, 5rem);
+      }
+
+      .orbit-card.one {
+        left: 0;
+      }
+
+      .orbit-card.two {
+        right: -4px;
+      }
+
+      .orbit-card.three {
+        left: 0;
+      }
+
+      .orbit-card.four {
+        right: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------- INTRO & MUSIC ---------- */
+    .intro-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(2, 7, 17, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1.5s var(--spring-smooth), visibility 1.5s;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .intro-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-content {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .intro-text {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--cream);
+      margin-bottom: 40px;
+      letter-spacing: -0.01em;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .intro-button {
+      font-size: 1.1rem;
+      padding: 0 36px;
+      min-height: 56px;
+    }
+
+    .music-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9998;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(35, 26, 60, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #f7c7d6;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 150ms var(--spring-smooth), background 150ms ease, opacity 0.8s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .music-toggle.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .music-toggle:hover {
+      transform: scale(1.1);
+      background: rgba(35, 26, 60, 0.85);
+      transition-duration: 0ms;
+    }
+
+    .music-toggle:active {
+      transform: scale(0.95);
+      transition-duration: 0ms;
+    }
+
+    /* Transition logic */
+    body.is-intro {
+      overflow: hidden;
+    }
+
+    body.is-intro .stars {
+      opacity: 0 !important;
+    }
+
+    .stars {
+      transition: opacity 3.5s ease-in-out;
+    }
+
+    .moon {
+      transition: box-shadow 3s ease-out, filter 3s ease-out;
+    }
+
+    body.is-transitioning .moon {
+      box-shadow:
+        0 0 45px rgba(255, 247, 211, 1),
+        0 0 90px rgba(213, 230, 255, .8),
+        0 0 160px rgba(135, 179, 238, .5);
+      filter: brightness(1.25);
+    }
+
+    .moon-reflection {
+      transition: filter 3s ease-out;
+    }
+
+    body.is-transitioning .moon-reflection {
+      filter: blur(0px) brightness(1.6) contrast(1.25);
+    }
+
+    /* ═══════════════════════════════════════
+       UNIVERSO FLOTANTE DE RECUERDOS
+       ═══════════════════════════════════════ */
+    .memory-universe {
+      position: relative;
+      width: 100%;
+      height: 160svh;
+      margin-top: 40px;
+    }
+
+    .memory-universe-scene {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100svh;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .floating-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: clamp(150px, 20vw, 260px);
+      transform-style: preserve-3d;
+      transition:
+        transform var(--photo-duration, 12s) var(--photo-easing, var(--spring-smooth)),
+        opacity 1.2s ease;
+      transform:
+        translate3d(calc(var(--photo-x, 50vw) - 50%),
+          calc(var(--photo-y, 50vh) - 50%),
+          0px) rotate(var(--photo-rotation, 0deg)) scale(var(--photo-scale, 1));
+      opacity: var(--photo-opacity, 0);
+      z-index: var(--photo-zindex, 1);
+      will-change: transform, opacity;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      outline: none;
+    }
+
+    .floating-photo:focus-visible {
+      outline: 2px solid #f5c7d5;
+      outline-offset: 4px;
+      border-radius: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .floating-photo {
+        width: clamp(120px, 40vw, 170px);
+      }
+    }
+
+    .floating-photo.is-entering {
+      opacity: 0;
+      transition: transform 1.8s var(--spring-smooth), opacity 1.2s ease;
+    }
+
+    .floating-photo.is-visible {
+      opacity: var(--photo-opacity, 0.8);
+    }
+
+    .floating-photo.is-selected {
+      transition: transform 0.55s var(--spring-smooth), opacity 0.4s ease;
+    }
+
+    .floating-photo.is-paused {
+      transition: transform 0.5s ease-out, opacity 0.5s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .floating-photo:hover:not(.is-selected) {
+        filter: brightness(1.12);
+      }
+    }
+
+    .floating-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .floating-photo-meta {
+      margin-top: 8px;
+      text-align: center;
+      background: rgba(30, 22, 50, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 8px 12px;
+      border-radius: 10px;
+      pointer-events: none;
+      max-width: 100%;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .floating-photo-category {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #f5c7d5;
+      margin-bottom: 3px;
+      font-weight: 600;
+    }
+
+    .floating-photo-desc {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.35;
+      max-width: 22ch;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .floating-photo.is-selected .floating-photo-desc {
+      -webkit-line-clamp: unset;
+      line-clamp: unset;
+      max-width: 32ch;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .floating-photo {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="is-intro">
+  <!-- Pantalla inicial cinematográfica -->
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-content">
+      <h1 class="intro-text">Tengo algo especial para ti ❤️</h1>
+      <button class="button button-primary intro-button" id="enterBtn" type="button">Entrar ✨</button>
+    </div>
+  </div>
+
+  <!-- Audio y control -->
+  <audio id="bgMusic" loop>
+    <source src="musica-romantica.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-toggle" id="musicToggle" aria-label="Reproducir/Pausar música">
+    <span id="musicIcon">♪</span>
+  </button>
+
+  <header class="hero" id="inicio">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">23 de agosto · nuestro primer mes</div>
+        <h1>Feliz Primer Mes de relación <span class="accent">amorcito</span> ✨</h1>
+        <p>
+          Tu me pediste una carta y te la hice pero a mi manera bebe espero te guste mucho UwU
+        </p>
+
+      </div>
+
+      <div class="scene reveal" aria-label="Paisaje nocturno romántico frente al mar">
+        <div class="stars"></div>
+
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
+        <div class="cloud c3"></div>
+
+        <div class="moon-wrap">
+          <div class="moon-glow"></div>
+          <div class="moon"></div>
+        </div>
+
+        <div class="horizon-haze"></div>
+        <div class="island"></div>
+
+        <section class="sea">
+          <div class="moon-reflection"></div>
+          <div class="wave-line w1"></div>
+          <div class="wave-line w2"></div>
+          <div class="wave-line w3"></div>
+          <div class="wave-line w4"></div>
+        </section>
+
+        <div class="beach"></div>
+        <div class="wet-sand"></div>
+
+        <div class="shore-wave back"></div>
+        <div class="shore-wave front"></div>
+
+        <div class="rock r1"></div>
+        <div class="rock r2"></div>
+
+        <i class="sparkle s1"></i>
+        <i class="sparkle s2"></i>
+        <i class="sparkle s3"></i>
+        <i class="sparkle s4"></i>
+        <i class="sparkle s5"></i>
+
+        <div class="caption">Amor el mar que siempre nos hace refleccionar sobre la vida uu.</div>
+        <div class="vignette"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section reveal" id="sofia">
+      <div class="two-col">
+        <div class="portrait-note" id="portrait"
+          style="aspect-ratio: 899 / 1599; container-type: size; min-height: unset;">
+          <!-- Reemplaza assets/sofia.jpg con una foto y aparecerá automáticamente. -->
+          <img src="foto_ella.jpeg" alt="Foto de Sofía"
+            style="top: 50%; left: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) rotate(90deg); width: 100cqh; height: 100cqw; max-width: none;"
+            onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()" />
+          <div class="portrait-note-content">
+            <div class="section-kicker" style="color:#f7c7d6">Mi persona favorita de este capítulo</div>
+            <h3>Sofía</h3>
+            <p>Una mezcla de ternura, carácter, sueños, dedicación y ese lado juguetón que hace que cada momento tenga
+              algo distinto.</p>
+          </div>
+        </div>
+
+        <div>
+
+          <h2 class="section-title">Las cosas que te hacen ser tu amor uu</h2>
+          <p class="section-intro">
+            No quería hacerte una página llena de frases genéricas. Quería que se sintiera como tú: con detalles reales,
+            un poquito de magia y mucho cariño.
+          </p>
+
+          <div class="reasons" style="margin-top:34px">
+            <article class="reason">
+              <div class="icon">🧠</div>
+              <h3>Tu vocación por la psicología y los niños</h3>
+              <p>Es lindo amor ver que lo que haces te gusta y que ya te hayas decidido por especializarte en niños.
+              </p>
+            </article>
+            <article class="reason">
+              <div class="icon">💼</div>
+              <h3>Lo buena que eres en lo que haces y tienes potencial amor</h3>
+              <p>Tu forma de tomarte en serio tu trabajo dice mucho de ti: responsable, capaz y con ganas de hacer las
+                cosas bien.</p>
+            </article>
+            <article class="reason">
+              <div class="icon">🐶</div>
+              <h3>Tu amor por tu perrita</h3>
+              <p>Hay algo muy bonito en la forma en que quieres y cuidas a quienes forman parte de tu mundo como lo es
+                tu perrita a pesar de sus alergias.</p>
+            </article>
+            <article class="reason">
+              <div class="icon">😴</div>
+              <h3>Tu modo dormilona</h3>
+              <p>Gracias amor por dejarme ser parte de tus sueños uu, aunque sean virtuales eres como una osita
+                dormilona uwu.
+              </p>
+            </article>
+            <article class="reason">
+              <div class="icon">✨</div>
+              <h3>Mi chica Disney</h3>
+              <p>Me encanta esa chispa mágica que tienes, como sacada de una pelicula Disney.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="memory-band reveal" id="momentos">
+      <div class="memory-inner">
+        <div class="section-kicker">Nuestros Momentos</div>
+        <h2 class="section-title">Cosas simples que contigo se sienten especiales.</h2>
+        <p class="section-intro">Una pequeña colección de instantes y recuerdos que he ido guardando durante este primer
+          mes.</p>
+
+        <h3 class="gallery-title">🎬 Unas de nuestras salidas en el cine</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 3072 / 3072;"><img src="assets/cine/foto6.jpeg" alt="Cine"
+              loading="lazy" /></article>
+          <article class="gallery-item" style="aspect-ratio: 720 / 1183;"><img src="assets/cine/foto16.jpeg" alt="Cine"
+              loading="lazy" />
+          </article>
+        </div>
+
+        <h3 class="gallery-title">💻 Nuestras llamadas</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 1440 / 900;"><img src="assets/llamadas_meet/foto1.jpeg"
+              alt="Meet" loading="lazy" />
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 900 / 1440;"><img src="assets/llamadas_meet/foto2.jpeg"
+              alt="Meet" loading="lazy" />
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 1440 / 900;"><img src="assets/llamadas_meet/foto3.jpeg"
+              alt="Meet" loading="lazy" />
+          </article>
+        </div>
+
+        <h3 class="gallery-title">❤️</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;"><img src="assets/fotos_de_ella/foto4.jpeg"
+              alt="Sofía" loading="lazy" />
+          </article>
+        </div>
+
+        <h3 class="gallery-title">Tú y Snoopy</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 1599 / 899;"><img src="assets/fotos_de_ella/foto7.jpeg"
+              alt="Sofía y Snoopy" loading="lazy" />
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;"><img src="assets/fotos_de_ella/foto8.jpeg"
+              alt="Sofía y Snoopy" loading="lazy" />
+          </article>
+        </div>
+
+        <h3 class="gallery-title">💪 Cuando fuimos al gym</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 1640 / 3072;"><img src="assets/fotos_de_ella/foto10.jpeg"
+              alt="En el gym" loading="lazy" />
+          </article>
+        </div>
+
+        <h3 class="gallery-title">🤝 Manitas</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 3072 / 3072;"><img
+              src="assets/agarrados_de_la_mano/foto5.jpeg" alt="De la mano" loading="lazy" /></article>
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;">
+            <img src="assets/agarrados_de_la_mano/foto9.jpeg" alt="Primer día de enamorados" loading="lazy" />
+            <div class="gallery-label">
+              Primer día de enamorados
+              <small>23/07/2003</small>
+            </div>
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;">
+            <img src="assets/agarrados_de_la_mano/foto11.jpeg" alt="Primer día que nos sentimos muy bien"
+              loading="lazy" />
+            <div class="gallery-label"
+              style="font-size: 0.72rem; font-weight: 400; font-style: italic; padding: 12px; width: 90%; max-width: 90%;">
+              El primer día en el que nos sentimos muy bien el uno con el otro, y al menos yo sentí que fui realmente
+              feliz con ella.
+            </div>
+          </article>
+        </div>
+
+        <h3 class="gallery-title">🌸 Otros pequeños detalles</h3>
+        <div class="gallery-grid">
+
+          <article class="gallery-item" style="aspect-ratio: 1200 / 1600;">
+            <img src="assets/otros_momentos/foto13.jpeg" alt="Un gesto muy bonito" loading="lazy" />
+            <div class="gallery-label"
+              style="font-size: 0.72rem; font-weight: 400; font-style: italic; padding: 12px; width: 90%; max-width: 90%;">
+              Un gesto muy bonito por parte de mi amor que siempre lo guardo en la parte posterior de mi celular.
+            </div>
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 1200 / 1600;"><img src="assets/otros_momentos/foto14.jpeg"
+              alt="Momento" loading="lazy" />
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 720 / 1280;"><img src="assets/otros_momentos/foto15.jpeg"
+              alt="Momento" loading="lazy" />
+          </article>
+
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;">
+            <img src="assets/otros_momentos/foto18.jpeg" alt="Una salida bonita" loading="lazy" />
+            <div class="gallery-label"
+              style="font-size: 0.72rem; font-weight: 400; font-style: italic; padding: 12px; width: 90%; max-width: 90%;">
+              Aquí la salida fue bonita porque aparte de estar contigo, había un chico que tocaba muy bonito.
+            </div>
+          </article>
+        </div>
+
+        <h3 class="gallery-title">🌷 Flores</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;">
+            <img src="assets/otros_momentos/foto17.jpeg" alt="La primera vez que le regalé flores" loading="lazy" />
+            <div class="gallery-label"
+              style="font-size: 0.72rem; font-weight: 400; font-style: italic; padding: 12px; width: 90%; max-width: 90%;">
+              La primera vez que le regalé flores y fue algo muy espontáneo, simplemente me sentía feliz.
+            </div>
+          </article>
+        </div>
+
+        <h3 class="gallery-title">🍝 Nuestra cita en la que te cociné</h3>
+        <div class="gallery-grid">
+          <article class="gallery-item" style="aspect-ratio: 3072 / 3072;"><img src="assets/salida_cocina/foto19.jpeg"
+              alt="Cocina" loading="lazy" />
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 3072 / 3072;"><img src="assets/salida_cocina/foto20.jpeg"
+              alt="Cocina" loading="lazy" />
+          </article>
+          <article class="gallery-item" style="aspect-ratio: 899 / 1599;"><img src="assets/salida_cocina/foto21.jpeg"
+              alt="Cocina" loading="lazy" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section reveal" id="carta">
+      <div style="text-align:center">
+        <div class="section-kicker">Una carta para este primer mes</div>
+        <h2 class="section-title" style="margin-inline:auto">Para ti, Sofía.</h2>
+      </div>
+
+      <div class="envelope reveal" id="envelope">
+        <div class="envelope-body">
+          <div class="envelope-flap" aria-hidden="true"></div>
+          <div class="envelope-seal" aria-hidden="true">♡</div>
+          <p class="envelope-label">Un sobre para ti, Sofía</p>
+          <button class="button button-primary" id="envelopeButton" type="button" aria-expanded="false"
+            aria-controls="letterContent">Abrir la carta ✉️</button>
+        </div>
+      </div>
+
+      <article class="letter" id="letterContent">
+        <p>
+          Amorcito, quizás no lo sepas, pero cuando empecé a salir contigo realmente no sabía qué iba a pasar entre nosotros.
+          No tenía una historia imaginada ni sabía hasta dónde llegaríamos. Simplemente quería conocerte y dejar que las cosas
+          fueran sucediendo. Y creo que justamente por eso me gusta tanto mirar atrás y ver todo lo que fue naciendo entre
+          nosotros sin que yo lo planeara.
+        </p>
+      
+        <p>
+          Porque contigo no fue algo que apareció de golpe. Fue poquito a poquito. Entre nuestras salidas, nuestras
+          conversaciones, nuestras diferencias, los pequeños temitas que hemos tenido y todas esas veces en las que,
+          de una manera u otra, terminamos encontrando la forma de entendernos.
+        </p>
+      
+        <p>
+          Y mientras todo eso pasaba, tú también empezaste a derribar un muro en mí que llevaba muchísimo tiempo ahí.
+          Yo siempre he sido una persona bastante independiente, reservada con mis cosas y no muy acostumbrada a mostrar
+          todo lo que siento. Pero contigo algo empezó a cambiar.
+        </p>
+      
+        <p>
+          Poco a poco hiciste que me sintiera cómodo mostrándote partes de mí que normalmente guardaba para mí.
+          Empecé a contarte mis cosas, a querer compartir contigo mis días, mis metas, mis preocupaciones y hasta esas
+          pequeñas tonterías que antes probablemente me habría quedado para mí. Y sin darme cuenta, terminaste sacando
+          un lado de mí que ni siquiera yo conocía demasiado.
+        </p>
+      
+        <p>
+          Creo que eso es una de las cosas más bonitas que me has dado durante este tiempo: sentir que contigo puedo
+          bajar un poquito la guardia y simplemente ser yo. Y aunque a veces todavía estoy aprendiendo a manejar todo
+          lo que siento, me gusta saber que eres tú la persona con la que estoy descubriendo esta parte de mí.
+        </p>
+      
+        <p>
+          También hemos descubierto que somos diferentes en algunas cosas, y probablemente descubriremos muchas más.
+          Pero me gusta que, incluso cuando no pensamos igual, poco a poco estamos aprendiendo a entendernos, a respetar
+          nuestros tiempos y a encontrar nuestra propia manera de querernos.
+        </p>
+      
+        <p>
+          Siento que lo que tenemos es especial precisamente porque todavía lo estamos descubriendo. Nos queda muchísimo
+          por conocernos, muchas conversaciones por tener, lugares a los que ir, momentos de los que reírnos y recuerdos
+          que todavía ni siquiera existen.
+        </p>
+      
+        <p>
+          No sé exactamente qué estará escrito después de este primer mes, y creo que esa también es parte de la magia.
+          No quiero apurar nuestra historia ni intentar saberlo todo ahora. Quiero seguir conociéndote, disfrutar cada
+          etapa contigo y cuidar esto bonito que poco a poco hemos ido construyendo.
+        </p>
+      
+        <p>
+          Feliz primer mes, mi amorcito. Gracias por llegar a mi vida de una manera que no esperaba y por convertirte,
+          poquito a poquito, en alguien tan especial para mí. ❤️✨
+        </p>
+      
+        <div class="signature">Con mucho cariño ♡, tu cerebrito favorito</div>
+      </article>
+      
+      <div class="surprise">
+        <button class="button button-primary" id="surpriseButton" type="button" aria-expanded="false"
+          aria-controls="surprisePanel">Abrir una pequeña sorpresa ✨</button>
+      
+        <div class="surprise-panel" id="surprisePanel">
+          <div>
+            <div class="surprise-card">
+              <p class="big">“Mi parte favorita de nuestra historia todavía no está escrita.”</p>
+              <p>
+                Porque este primer mes no es una meta ni un punto de llegada.
+                Es solamente la primera página de todas esas cosas que todavía nos quedan
+                por descubrir, sentir y vivir juntos, poquito a poquito. ♡
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Hecho especialmente para mi amorcito · 23 de agosto de 2026 · ♡
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    // =========================
+    // 2) ANIMACIONES AL HACER SCROLL
+    // =========================
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+    }
+
+    // ═════════════════════════════════════════
+    // 2.1) UNIVERSO FLOTANTE DE FOTOS
+    // ═════════════════════════════════════════
+    const memoryInner = document.querySelector('#momentos .memory-inner');
+    const photoImages = Array.from(document.querySelectorAll('#momentos img')).filter(img => {
+      const src = img.getAttribute('src');
+      return src && /(?:^|\/)foto\d+\.jpeg$/.test(src);
+    });
+
+    if (photoImages.length > 0 && !prefersReducedMotion) {
+      // ── Fase 2: Modelo de datos ──
+      const photosData = photoImages.map(img => {
+        const container = img.closest('.gallery-item');
+        let category = 'Recuerdo';
+        const grid = container.closest('.gallery-grid');
+        if (grid) {
+          let prev = grid.previousElementSibling;
+          while (prev) {
+            if (prev.classList.contains('gallery-title')) {
+              // Strip emoji prefix: get text after first letter
+              category = prev.textContent.replace(/^[\s\S]*?(?=[a-zA-ZáéíóúÁÉÍÓÚñÑ¿¡])/, '').trim();
+              break;
+            }
+            prev = prev.previousElementSibling;
+          }
+        }
+
+        const label = container.querySelector('.gallery-label');
+        let description = '';
+        if (label) {
+          description = label.textContent.replace(/\s{2,}/g, ' ').trim();
+        } else {
+          const alt = img.getAttribute('alt') || '';
+          // Filter out generic alts (§8 priority 3)
+          if (!['Momento', 'Cine', 'Meet', 'Cocina', 'Sofía'].includes(alt.trim())) {
+            description = alt.trim();
+          }
+        }
+
+        return { img, category, description, container };
+      });
+
+      // ── Fase 3: Escena ──
+      const oldElements = memoryInner.querySelectorAll('.gallery-grid, .gallery-title');
+      oldElements.forEach(el => el.style.display = 'none');
+
+      const universe = document.createElement('div');
+      universe.className = 'memory-universe';
+      const scene = document.createElement('div');
+      scene.className = 'memory-universe-scene';
+      universe.appendChild(scene);
+      memoryInner.appendChild(universe);
+
+      const EASINGS = [
+        'var(--spring-smooth)',
+        'var(--spring-snappy)',
+        'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'cubic-bezier(0.37, 0, 0.63, 1)'
+      ];
+
+      const floatingPhotos = [];
+      let activePhoto = null;
+      let autoQueue = [];
+      let schedulerPaused = false;  // §31: cooldown after closing selection
+
+      // ── Fase 4: Posiciones iniciales con separación (§32, §55) ──
+      function isMobileNow() { return window.innerWidth <= 768; }
+
+      function generateSpreadPositions(count) {
+        const positions = [];
+        const mobile = isMobileNow();
+        const minDist = mobile ? 18 : 14; // % minimum distance between photos
+        const rangeX = mobile ? 60 : 75;
+        const rangeY = mobile ? 60 : 70;
+        const offsetX = mobile ? 20 : 12;
+        const offsetY = mobile ? 20 : 15;
+
+        for (let i = 0; i < count; i++) {
+          let x, y, tries = 0;
+          do {
+            x = Math.random() * rangeX + offsetX;
+            y = Math.random() * rangeY + offsetY;
+            tries++;
+          } while (
+            tries < 30 &&
+            positions.some(p => Math.hypot(p.x - x, p.y - y) < minDist)
+          );
+          positions.push({ x, y });
+        }
+        return positions;
+      }
+
+      const initialPositions = generateSpreadPositions(photosData.length);
+
+      // ── Build floating photo elements ──
+      photosData.forEach((data, index) => {
+        const el = document.createElement('div');
+        el.className = 'floating-photo is-entering';
+        el.setAttribute('tabindex', '0');  // §61: keyboard accessible
+        el.setAttribute('role', 'button');
+        el.setAttribute('aria-label', `${data.category}${data.description ? ': ' + data.description : ''}`);
+
+        const clonedImg = data.img.cloneNode();
+        clonedImg.removeAttribute('loading');
+        clonedImg.removeAttribute('style');  // remove inline aspect-ratio forcing
+        el.appendChild(clonedImg);
+
+        const meta = document.createElement('div');
+        meta.className = 'floating-photo-meta';
+        const cat = document.createElement('div');
+        cat.className = 'floating-photo-category';
+        cat.textContent = data.category;
+        meta.appendChild(cat);
+        if (data.description) {
+          const desc = document.createElement('div');
+          desc.className = 'floating-photo-desc';
+          desc.textContent = data.description;
+          meta.appendChild(desc);
+        }
+        el.appendChild(meta);
+        scene.appendChild(el);
+
+        const pos = initialPositions[index];
+        const state = {
+          element: el,
+          x: pos.x,
+          y: pos.y,
+          depth: Math.random(),
+          rotation: (Math.random() - 0.5) * 10,
+          speed: 8 + Math.random() * 9,   // §18: individual speed 8-17s
+          easing: EASINGS[index % EASINGS.length],  // §43/§44: variable easing
+          isSelected: false,
+          isForeground: false
+        };
+        floatingPhotos.push(state);
+
+        applyState(state);
+
+        // §54: Staggered entrance
+        setTimeout(() => {
+          el.classList.remove('is-entering');
+          el.classList.add('is-visible');
+        }, 300 + index * 120);
+
+        // §8/§21: Click/tap selection
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          selectPhoto(state);
+        });
+
+        // §61: Enter/Space keyboard support
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            e.stopPropagation();
+            selectPhoto(state);
+          }
+        });
+      });
+
+      // §27: Click scene background to close
+      scene.addEventListener('click', () => {
+        if (activePhoto) clearSelection();
+      });
+
+      // §27/§99: Escape to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && activePhoto) clearSelection();
+      });
+
+      // ── Fase 6: Profundidad & apply visual state ──
+      function applyState(state) {
+        const el = state.element;
+        const mobile = isMobileNow();
+        let scale = 0.60 + (state.depth * 0.40);  // 0.60–1.00
+        let opacity = 0.50 + (state.depth * 0.40); // 0.50–0.90
+        let zIndex = Math.floor(state.depth * 10) + 1;
+        let duration = state.speed;
+
+        if (state.isSelected) {
+          scale = mobile ? 1.15 : 1.35;
+          opacity = 1;
+          zIndex = 100;
+          duration = 0.55;
+          el.classList.add('is-selected');
+        } else {
+          el.classList.remove('is-selected');
+          if (activePhoto) {
+            // §25: Dim non-selected photos
+            opacity *= 0.55;
+            scale *= 0.92;
+          }
+        }
+
+        if (state.isForeground && !state.isSelected) {
+          scale = mobile ? 0.95 : 1.08;
+          opacity = 1;
+          zIndex = 50;
+        }
+
+        el.style.setProperty('--photo-x', `${state.x}vw`);
+        el.style.setProperty('--photo-y', `${state.y}vh`);
+        el.style.setProperty('--photo-scale', scale.toFixed(3));
+        el.style.setProperty('--photo-opacity', opacity.toFixed(3));
+        el.style.setProperty('--photo-rotation', `${state.rotation.toFixed(1)}deg`);
+        el.style.setProperty('--photo-duration', `${duration}s`);
+        el.style.setProperty('--photo-easing', state.easing);
+        el.style.zIndex = zIndex;
+      }
+
+      // ── Fase 5: Waypoint movement with anti-clustering (§14, §15, §32) ──
+      function generateWaypoint(state) {
+        const mobile = isMobileNow();
+        const rangeX = mobile ? 55 : 70;
+        const rangeY = mobile ? 55 : 65;
+        const offX = mobile ? 22 : 15;
+        const offY = mobile ? 22 : 17;
+        const minDist = mobile ? 16 : 12;
+
+        let x, y, tries = 0;
+        do {
+          x = Math.random() * rangeX + offX;
+          y = Math.random() * rangeY + offY;
+          tries++;
+        } while (
+          tries < 20 &&
+          floatingPhotos.some(p =>
+            p !== state && !p.isSelected && Math.hypot(p.x - x, p.y - y) < minDist
+          )
+        );
+        return { x, y };
+      }
+
+      function movePhoto(state) {
+        if (state.isSelected) return;
+        const wp = generateWaypoint(state);
+        state.x = wp.x;
+        state.y = wp.y;
+        state.rotation = (Math.random() - 0.5) * 10;  // §15: -5 to +5 deg
+        // §18: Slightly vary speed each leg
+        state.speed = 8 + Math.random() * 9;
+        // §43: Vary easing
+        state.easing = EASINGS[Math.floor(Math.random() * EASINGS.length)];
+        if (!state.isForeground) {
+          state.depth = Math.random();
+        }
+        applyState(state);
+      }
+
+      // §22: Select a photo
+      function selectPhoto(state) {
+        if (activePhoto === state) return;
+        if (activePhoto) {
+          activePhoto.isSelected = false;
+          applyState(activePhoto);
+          movePhoto(activePhoto);
+        }
+        schedulerPaused = true;  // §30: manual > auto
+        activePhoto = state;
+        state.isSelected = true;
+        // §45: Slightly off-center for variety
+        state.x = 48 + Math.random() * 4;
+        state.y = 45 + Math.random() * 10;
+        state.rotation = (Math.random() - 0.5) * 3;
+        applyState(state);
+
+        // §25: Update all other photos
+        floatingPhotos.forEach(p => { if (p !== state) applyState(p); });
+      }
+
+      // §27: Clear selection
+      function clearSelection() {
+        if (!activePhoto) return;
+        activePhoto.isSelected = false;
+        applyState(activePhoto);
+        movePhoto(activePhoto);
+        activePhoto = null;
+
+        // Restore all to normal opacity/scale
+        floatingPhotos.forEach(p => applyState(p));
+
+        // §31: Cooldown before reactivating scheduler
+        schedulerPaused = true;
+        setTimeout(() => { schedulerPaused = false; }, 3000);
+      }
+
+      // ── Start movement: listen to transitionend and kick off (§42) ──
+      floatingPhotos.forEach((state, i) => {
+        state.element.addEventListener('transitionend', (e) => {
+          if (e.propertyName === 'transform' && !state.isSelected) {
+            movePhoto(state);
+          }
+        });
+        // §54: Staggered start of movement after entrance
+        setTimeout(() => movePhoto(state), 1500 + i * 150);
+      });
+
+      // ── Fase 7: Fair foreground scheduler (§46) ──
+      function shuffleQueue() {
+        autoQueue = [...floatingPhotos].sort(() => Math.random() - 0.5);
+      }
+      shuffleQueue();
+
+      setInterval(() => {
+        if (activePhoto || schedulerPaused) return;  // §30, §31
+        if (autoQueue.length === 0) shuffleQueue();
+
+        const next = autoQueue.shift();
+
+        // Remove previous foreground
+        floatingPhotos.forEach(p => {
+          if (p.isForeground) {
+            p.isForeground = false;
+            applyState(p);
+          }
+        });
+
+        next.isForeground = true;
+        // §45: Not always center, slight offsets
+        const mobile = isMobileNow();
+        next.x = (mobile ? 35 : 30) + Math.random() * (mobile ? 30 : 40);
+        next.y = 28 + Math.random() * 40;
+        next.rotation = (Math.random() - 0.5) * 5;
+        applyState(next);
+      }, 7000);
+
+      // ── §63/§65: Hover pause on desktop ──
+      floatingPhotos.forEach(state => {
+        state.element.addEventListener('pointerenter', () => {
+          if (!state.isSelected && window.innerWidth > 768) {
+            state.element.classList.add('is-paused');
+          }
+        });
+        state.element.addEventListener('pointerleave', () => {
+          state.element.classList.remove('is-paused');
+        });
+      });
+
+    } else {
+      // ── Fase 11: Reduced motion — preserve static grid (§59, §60) ──
+      const photoContainers = [];
+      photoImages.forEach(img => {
+        const container = img.closest('.gallery-item');
+        if (container) {
+          container.classList.add('photo-motion');
+          photoContainers.push(container);
+        }
+      });
+
+      if ('IntersectionObserver' in window) {
+        let staggerDelay = 0;
+        let staggerTimeout = null;
+
+        const photoObserver = new IntersectionObserver((entries) => {
+          const intersecting = entries.filter(e => e.isIntersecting);
+          if (intersecting.length === 0) return;
+          intersecting.forEach((entry) => {
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, staggerDelay);
+            staggerDelay += 60;
+            photoObserver.unobserve(entry.target);
+          });
+          clearTimeout(staggerTimeout);
+          staggerTimeout = setTimeout(() => { staggerDelay = 0; }, 100);
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        photoContainers.forEach(container => photoObserver.observe(container));
+      } else {
+        photoContainers.forEach(container => container.classList.add('is-visible'));
+      }
+    }
+
+    // =========================
+    // 3) SOBRE DE LA CARTA
+    // =========================
+    const envelope = $('envelope');
+    const envelopeButton = $('envelopeButton');
+
+    if (envelope && envelopeButton) {
+      envelopeButton.addEventListener('click', () => {
+        envelope.classList.add('envelope-open');
+        envelopeButton.setAttribute('aria-expanded', 'true');
+        envelopeButton.disabled = true;
+
+        const collapse = () => envelope.classList.add('envelope-collapsed');
+        if (prefersReducedMotion) {
+          collapse();
+        } else {
+          setTimeout(collapse, 900);
+        }
+      });
+    }
+
+    // =========================
+    // 4) SORPRESA
+    // =========================
+    const surpriseButton = $('surpriseButton');
+    const surprisePanel = $('surprisePanel');
+
+    surpriseButton.addEventListener('click', () => {
+      const isOpen = surprisePanel.classList.toggle('open');
+      surpriseButton.setAttribute('aria-expanded', String(isOpen));
+      surpriseButton.textContent = isOpen ? 'Sorpresa abierta ♡' : 'Abrir una pequeña sorpresa ✨';
+
+      if (isOpen && !prefersReducedMotion) createPetals(22);
+    });
+
+    // =========================
+    // 5) PÉTALOS DECORATIVOS
+    // =========================
+    function createPetals(amount = 12) {
+      for (let i = 0; i < amount; i++) {
+        const petal = document.createElement('span');
+        petal.className = 'petal';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.opacity = 0.3 + Math.random() * 0.5;
+        petal.style.transform = `rotate(${Math.random() * 180}deg)`;
+        petal.style.setProperty('--drift', `${-90 + Math.random() * 180}px`);
+        petal.style.animationDuration = `${4.8 + Math.random() * 3.5}s`;
+        petal.style.animationDelay = `${Math.random() * .7}s`;
+        document.body.appendChild(petal);
+        setTimeout(() => petal.remove(), 9000);
+      }
+    }
+
+    // =========================
+    // 6) MÚSICA E INTRO
+    // =========================
+    const introScreen = document.getElementById('introScreen');
+    const enterBtn = document.getElementById('enterBtn');
+    const musicToggle = document.getElementById('musicToggle');
+    const musicIcon = document.getElementById('musicIcon');
+    const bgMusic = document.getElementById('bgMusic');
+
+    const MAX_VOLUME = 0.40; // Volumen máximo 40%
+    let isPlaying = false;
+
+    function fadeAudioIn(audio, targetVolume, duration) {
+      audio.volume = 0;
+      audio.play().catch(e => console.log("Audio autoplay bloqueado:", e));
+
+      const steps = 50;
+      const stepValue = targetVolume / (duration / steps);
+
+      const interval = setInterval(() => {
+        if (audio.volume + stepValue < targetVolume) {
+          audio.volume += stepValue;
+        } else {
+          audio.volume = targetVolume;
+          clearInterval(interval);
+        }
+      }, steps);
+    }
+
+    function fadeAudioOut(audio, duration) {
+      const steps = 50;
+      const stepValue = audio.volume / (duration / steps);
+
+      const interval = setInterval(() => {
+        if (audio.volume - stepValue > 0) {
+          audio.volume -= stepValue;
+        } else {
+          audio.volume = 0;
+          audio.pause();
+          clearInterval(interval);
+        }
+      }, steps);
+    }
+
+    if (enterBtn && introScreen) {
+      enterBtn.addEventListener('click', () => {
+        // Reproducir música
+        isPlaying = true;
+        musicIcon.textContent = '♪';
+        fadeAudioIn(bgMusic, MAX_VOLUME, 2500);
+
+        // Ocultar pantalla inicial
+        introScreen.classList.add('hidden');
+        musicToggle.classList.add('visible');
+
+        // Quitar clase de intro para revelar estrellas
+        document.body.classList.remove('is-intro');
+
+        // Añadir efecto de transición inicial (brillo)
+        if (!prefersReducedMotion) {
+          document.body.classList.add('is-transitioning');
+
+          // Regresar a la normalidad después de 3s
+          setTimeout(() => {
+            document.body.classList.remove('is-transitioning');
+          }, 3000); // 3 segundos para el efecto
+        }
+      });
+    }
+
+    if (musicToggle) {
+      musicToggle.addEventListener('click', () => {
+        if (isPlaying) {
+          fadeAudioOut(bgMusic, 1000);
+          musicIcon.textContent = '🔇';
+        } else {
+          fadeAudioIn(bgMusic, MAX_VOLUME, 1000);
+          musicIcon.textContent = '♪';
+        }
+        isPlaying = !isPlaying;
+      });
+    }
+
+    // Pequeño efecto de paralaje al mover el mouse.
+    const scene = document.querySelector('.scene');
+    const moon = document.querySelector('.moon-wrap');
+    const stars = document.querySelector('.stars');
+    const reflection = document.querySelector('.moon-reflection');
+
+    scene.addEventListener('pointermove', (e) => {
+      const x = e.clientX / innerWidth - .5;
+      const y = e.clientY / innerHeight - .5;
+
+      moon.style.transform =
+        `translate3d(${x * -10}px, ${y * -7}px, 0)`;
+      stars.style.transform =
+        `translate3d(${x * -7}px, ${y * -4}px, 0)`;
+      reflection.style.marginRight = `${x * -8}px`;
+    });
+
+    scene.addEventListener('pointerleave', () => {
+      moon.style.transform = '';
+      stars.style.transform = '';
+      reflection.style.marginRight = '';
+    });
+  </script>
+</body>
+
+</html>
